@@ -30,3 +30,5 @@ I have also generated Mimikatz telemetry to create custom alerts to detect malwa
 
 - Initial setup involves mapping out the homelab and how the cloud components and services should be structured.
 - I utilized DigitalOcean to create the Linux Ubuntu 22.04 machine, TheHive server, and Wazuh server.
+
+*Under Construction*
