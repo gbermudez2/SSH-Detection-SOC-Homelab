@@ -30,6 +30,7 @@ I have also generated Mimikatz telemetry to create custom alerts to detect malwa
 
 - Initial setup involves mapping out the homelab and how the cloud components and services should be structured.
 - I utilized DigitalOcean to create the Linux Ubuntu 22.04 machine, TheHive server, and Wazuh server.
+  - *It's important to note that the servers have Firewalls that block all incoming traffic EXCEPT from my own public IP to prevent unwanted connections.*
 
 ### *Wazuh Server installation*
 
@@ -51,6 +52,16 @@ I have also generated Mimikatz telemetry to create custom alerts to detect malwa
 - The Wazuh dashboard has a pretty streamlined process regarding installing an agent, even providing the command that would link the server to the endpoint.
 - Unfortunately, due to some unknown circumstances, the command did not work, and I had to manually enter in the server IP into the ossec.conf file. The ossec.conf file is the main client-side Wazuh configuration file. This is to forward any incoming traffic from the endpoint to the server.
 
+### *TheHive Server installation*
 
+![image](https://github.com/user-attachments/assets/c71b31d1-9a9b-4879-92f7-01c48de56eb4)
+![image](https://github.com/user-attachments/assets/caa7e337-e59f-4f81-9775-09cbf2da29f5)
+
+- It's important to note that TheHive requires a stack of dependencies to function properly.
+- The stack I used was **Cassandra** for the database, **Elasticsearch** for indexing, and **Wazuh** for log collection.
+- Java is also required.
+- Logging in requires using [server-IP:9000].
+- These tools culminate into TheHive, which serves as a case management system for SOC Analysts to manage cases.
+- Admittedly, I did not get it to work much, which I will talk about later in the Shuffle section, but I was able to get it to display dedicated cases and create users/organizations.
 
 *Under Construction*
