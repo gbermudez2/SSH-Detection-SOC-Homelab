@@ -64,4 +64,28 @@ I have also generated Mimikatz telemetry to create custom alerts to detect malwa
 - These tools culminate into TheHive, which serves as a case management system for SOC Analysts to manage cases.
 - Admittedly, I did not get it to work much, which I will talk about later in the Shuffle section, but I was able to get it to display dedicated cases and create users/organizations.
 
+### Firewall Configuration
+
+![image](https://github.com/user-attachments/assets/4ac20178-da02-4c97-a5fd-1c5089b7ef0b)
+
+- The nature of bots and scanners is that they will always try to find a possible password combination to get into your machine.
+- However, I want this happen. So I have _intentionally_ created a "honeypot firewall" on DigitalOcean to allow all inbound TCP connections on all ports.
+
+## Wazuh Alert Configuration
+
+![image](https://github.com/user-attachments/assets/cd87b64d-f719-4b05-adf9-4cbc03fd7588)
+
+- It's vital for a custom rule to be appended to the rule file, or else Wazuh won't display the relevant alerts!
+- Opening the local.rules file in Wazuh's dashboard, we can add the above rule to the file to display all level 5 alerts.
+  - All SSH bruteforce attempts are classed as level 5 alerts, so all of them will be classed as such and displayed by Wazuh.
+  - By default, Wazuh also classifies them as T1110.001 and T1021.004; Password Guessing and Remote Services, respectively.
+
+![image](https://github.com/user-attachments/assets/c923881d-a8a9-4262-b259-579c482f0c2c)
+
+![image](https://github.com/user-attachments/assets/d6db3210-8e9d-4ed4-bd05-c2dd301fdb18)
+
+- At the time of writing, there have been over 10 million alerts
+
+
+
 *Under Construction*
