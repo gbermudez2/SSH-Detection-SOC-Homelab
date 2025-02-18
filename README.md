@@ -84,7 +84,9 @@ I have also generated Mimikatz telemetry to create custom alerts to detect malwa
 
 ![image](https://github.com/user-attachments/assets/d6db3210-8e9d-4ed4-bd05-c2dd301fdb18)
 
-- At the time of writing, there have been over 10 million alerts
+- At the time of writing (February 17), there have been over 10 million alerts.
+  - The memory of my server has been used fully, so no more alerts can be sent.
+  - This has caused some issues on launching the Wazuh dashboard. It can be mitigated by stopping the wazuh-dashboard service, clearing the wazuh-registry.json file, and restarting the wazuh-dashboard service (with a cleared browser cache).
 
 
 
