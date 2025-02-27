@@ -112,3 +112,8 @@ I have also generated Mimikatz telemetry to create custom alerts to detect malwa
 - These IPs are then reported to TheHive and made into a case.
 - This is where an issue arose; the **original implementation** was to prompt the Analyst to either allow or block the IP brought up. However, I had some issues curling the Wazuh API key and was unable to continue.
 - I've put a pause on this project in the meantime to work on other home-labs, but eventually I'll figure out a method for it.
+
+![image](https://github.com/user-attachments/assets/066f7cd4-23c6-44c5-a3c7-2cdbe51acff4)
+
+- On another test implementation, I was able to forward the VirusTotal data and craft an example email that Analysts can use.
+
