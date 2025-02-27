@@ -88,6 +88,27 @@ I have also generated Mimikatz telemetry to create custom alerts to detect malwa
   - The memory of my server has been used fully, so no more alerts can be sent.
   - This has caused some issues on launching the Wazuh dashboard. It can be mitigated by stopping the wazuh-dashboard service, clearing the wazuh-registry.json file, and restarting the wazuh-dashboard service (with a cleared browser cache).
 
+## Shuffle SOAR Automation
 
+![image](https://github.com/user-attachments/assets/ba30bb73-3258-48f2-9b02-675ea6261ed1)
 
-*Under Construction*
+- Using SOAR Automation, I can automate the process of IOC enrichment and send these alerts to TheHive.
+- The webhook contains an API that I can paste into the configuration files of Wazuh.
+
+![image](https://github.com/user-attachments/assets/381936ec-a12d-44e3-82f8-6a19b1a4d6e3)
+
+- An important aspect of IOC enrichment is making sure the information you wish to enrich is in a readable format.
+  - This is to prevent noise, as well as focus on relevant aspects of threat detection.
+  - In my automation, I chose to extract external IPs, and remove any extra characters NOT included in the IP using regex.
+
+![image](https://github.com/user-attachments/assets/c022bfba-11dc-47b2-98d3-1a0dd59cb7dc)
+
+- With this VirusTotal node, I take the extracted IP and input it into VirusTotal using another API (account creation required).
+- This is to see if the IP is attached to any malicious botnets, entities, or anything reported as malicious.
+  - As far as I could tell, none of the IPs had any information on them, but it's possible there could have been.
+
+![image](https://github.com/user-attachments/assets/a215fb54-e2ba-4884-bce2-ec0a5a8d09d3)
+
+- These IPs are then reported to TheHive and made into a case.
+- This is where an issue arose; the **original implementation** was to prompt the Analyst to either allow or block the IP brought up. However, I had some issues curling the Wazuh API key and was unable to continue.
+- I've put a pause on this project in the meantime to work on other home-labs, but eventually I'll figure out a method for it.
