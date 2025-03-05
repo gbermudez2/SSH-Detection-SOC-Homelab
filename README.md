@@ -18,8 +18,8 @@ I have also generated Mimikatz telemetry to create custom alerts to detect malwa
 
 - DigitalOcean for Linux server and endpoint set up.
 - Wazuh for Security Information and Event Management (SIEM) capabilities like log ingestion and analysis.
-- Cassandra for the Wazuh database.
-- Elasticsearch as an indexer for Wazuh.
+- Cassandra for the TheHive database.
+- Elasticsearch as an indexer for TheHive.
 - TheHive for Security Incident Response, and testing case management.
 - Shuffle as a Security Orchestration, Automation, and Response (SOAR) tool for IOC enrichment, data organization, and ingestion from Wazuh.
 
