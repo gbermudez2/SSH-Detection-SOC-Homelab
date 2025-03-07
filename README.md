@@ -1,5 +1,4 @@
 # SOC Homelab
-
 ## Objective
 
 This SOC Homelab project aims to detect and notify SOC Analysts regarding brute-force attempts to SSH into an endpoint machine. Due to the nature of external network scanners, all telemetry generated and logged within the Security Information and Event Management (SIEM) system is -genuine-, and is meant to serve as a honeypot VM. This hands-on lab was made to deepen my experience and understanding of security, alerts, attack patterns, and overall flexibility of programs used for defense.
@@ -23,7 +22,6 @@ I have also generated Mimikatz telemetry to create custom alerts to detect malwa
 - TheHive for Security Incident Response, and testing case management.
 - Shuffle as a Security Orchestration, Automation, and Response (SOAR) tool for IOC enrichment, data organization, and ingestion from Wazuh.
 
-## Steps
 ### *Homelab Network Diagram*
 
 ![sochomelab diagram](https://github.com/user-attachments/assets/17a3e9a4-2c50-43f5-ae38-349a3f3095e5)
@@ -32,6 +30,7 @@ I have also generated Mimikatz telemetry to create custom alerts to detect malwa
 - I utilized DigitalOcean to create the Linux Ubuntu 22.04 machine, TheHive server, and Wazuh server.
   - *It's important to note that the servers have Firewalls that block all incoming traffic EXCEPT from my own public IP to prevent unwanted connections.*
 
+## Steps
 ### *Wazuh Server installation*
 
 ![image](https://github.com/user-attachments/assets/97a4e9e5-5fab-4ebc-9074-160b1920788e)
